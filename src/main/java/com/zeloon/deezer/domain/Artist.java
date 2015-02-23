@@ -26,6 +26,7 @@ public class Artist {
     private Boolean radio;
     private String type;
     private String tracklist;
+    private String role;
 
     public Long getId() {
         return id;
@@ -98,4 +99,8 @@ public class Artist {
     public void setTracklist(String tracklist) {
         this.tracklist = tracklist;
     }
+
+    public String getRole() { return role; }
+
+    public void setRole(String role) { this.role = role; }
 }

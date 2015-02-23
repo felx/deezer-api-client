@@ -22,8 +22,7 @@ import com.zeloon.deezer.io.FileSystemResourceConnection;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 public class DeezerClientTest {
 
@@ -254,6 +253,36 @@ public class DeezerClientTest {
     @Test
     public void getTracks() {
         assertNotNull(deezerClient.getTracks(userId));
+    }
+
+    @Test
+    public void getTrackAlternativeTrackExplicitLyricsAndContributors(){
+        Track track = deezerClient.get(new TrackId(14176913L));
+        assertEquals(10583732L, track.getAlternative().getId().longValue());
+        assertEquals("Rapture (Avicii New Generation Extended Mix)", track.getTitle());
+
+        assertNotNull(track.getContributors());
+        assertEquals(382905L,track.getContributors().get(0).getId().longValue());
+        assertEquals("Nadia Ali",track.getContributors().get(0).getName());
+
+        assertNotNull(track.getAlternative()); // id":10583732,"readable":true,"title":"Rapture (Avicii New Generation Extended Mix)
+        assertEquals(10583732L,track.getAlternative().getId().longValue());
+        assertEquals("Rapture (Avicii New Generation Extended Mix)", track.getAlternative().getTitle());
+
+        assertFalse(track.getExplicit_lyrics());
+    }
+
+    @Test
+    public void getAlbumExplicitLyricsAndContributors(){
+        Album album = deezerClient.get(new AlbumId(1299988L));
+        assertEquals(1299988L, album.getId().longValue());
+        assertEquals("F*** Me I'm Famous 2011 (new version)", album.getTitle());
+
+        assertFalse(album.getExplicit_lyrics());
+
+        assertNotNull(album.getContributors());
+        assertEquals(542L,album.getContributors().get(0).getId().longValue());
+        assertEquals("David Guetta", album.getContributors().get(0).getName());
     }
 
 }

@@ -100,6 +100,12 @@ public class FileSystemResourceConnection implements ResourceConnection {
             return readFileToString("userService/exampleFollowers.json");
         } else if (url.equals("http://api.deezer.com/user/2529/charts")) {
             return readFileToString("userService/exampleCharts.json");
+        } else if (url.equals("http://api.deezer.com/track/14176913")) {
+            //getTrackAlternativeTrackExplicitLyricsAndContributors
+            return readFileToString("trackService/getTrackAlternativeTrackExplicitLyricsAndContributors.json");
+        } else if (url.equals("http://api.deezer.com/album/1299988")) {
+            // getAlbumExplicitLyricsAndContributors
+            return readFileToString("albumService/getAlbumExplicitLyricsAndContributors.json");
         } else {
             return "";
         }

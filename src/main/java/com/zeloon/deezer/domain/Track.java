@@ -16,6 +16,7 @@
 package com.zeloon.deezer.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class Track {
 
@@ -36,6 +37,9 @@ public class Track {
     private Double gain;
     private String[] available_countries;
     private Date time_add;
+    private Boolean explicit_lyrics;
+    private Track alternative;
+    private List<Artist> contributors;
 
     public Long getId() {
         return id;
@@ -174,4 +178,20 @@ public class Track {
     public void setTime_add(Date time_add) {
         this.time_add = time_add;
     }
+
+    public Boolean getExplicit_lyrics() {
+        return explicit_lyrics;
+    }
+
+    public void setExplicit_lyrics(Boolean explicit_lyrics) {
+        this.explicit_lyrics = explicit_lyrics;
+    }
+
+    public Track getAlternative() { return alternative; }
+
+    public void setAlternative(Track alternative) { this.alternative = alternative ; }
+
+    public List<Artist> getContributors() { return contributors; }
+
+    public void setContributors(List<Artist> contributors) { this.contributors = contributors; }
 }

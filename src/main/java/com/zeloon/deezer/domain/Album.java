@@ -15,6 +15,8 @@
  */
 package com.zeloon.deezer.domain;
 
+import java.util.List;
+
 public class Album {
 
     private Long id;
@@ -41,6 +43,7 @@ public class Album {
     private String record_type;
     private String tracklist;
     private Boolean explicit_lyrics;
+    private List<Artist> contributors;
 
     public Long getId() {
         return id;
@@ -233,4 +236,8 @@ public class Album {
     public void setExplicit_lyrics(Boolean explicit_lyrics) {
         this.explicit_lyrics = explicit_lyrics;
     }
+
+    public List<Artist> getContributors() { return contributors; }
+
+    public void setContributors(List<Artist> contributors) { this.contributors = contributors; }
 }
