@@ -40,6 +40,7 @@ public class Album {
     private Genres genres;
     private String record_type;
     private String tracklist;
+    private Boolean explicit_lyrics;
 
     public Long getId() {
         return id;
@@ -223,5 +224,13 @@ public class Album {
 
     public void setTracklist(String tracklist) {
         this.tracklist = tracklist;
+    }
+
+    public Boolean getExplicit_lyrics() {
+        return explicit_lyrics;
+    }
+
+    public void setExplicit_lyrics(Boolean explicit_lyrics) {
+        this.explicit_lyrics = explicit_lyrics;
     }
 }
