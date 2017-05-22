@@ -73,6 +73,21 @@
 
     </dependencies>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ayb-snapshots</id>
+            <url>https://repo.ayb.fr/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>ayb-releases</id>
+            <url>https://repo.ayb.fr/content/repositories/releases/</url>
+        </repository>
+        <site>
+            <id>ayb-sites</id>
+            <url>dav:https://repo.ayb.fr/content/sites/sites/${project.groupId}/</url>
+            <!-- http://repo.ayb.fr/content/repositories/sites/${project.groupId} -->
+        </site>
+    </distributionManagement>
 
 
 </project>

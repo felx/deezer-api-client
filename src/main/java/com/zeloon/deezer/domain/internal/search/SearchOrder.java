@@ -27,6 +27,6 @@ public enum SearchOrder {
     RATING_ASC,
     RATING_DESC,
     DURATION_ASC,
-    DURATION_DESC;
+    DURATION_DESC
 
 }

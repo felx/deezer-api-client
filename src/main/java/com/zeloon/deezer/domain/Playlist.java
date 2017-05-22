@@ -15,6 +15,7 @@
  */
 package com.zeloon.deezer.domain;
 
+
 import org.codehaus.jackson.annotate.JsonProperty;
 
 public class Playlist {
